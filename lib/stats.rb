@@ -198,6 +198,10 @@ module Stats
 
     private
 
+    def returning(value)
+      yield(value)
+      value
+    end
     # Put a box around a histogram plot
     def box(rv, options = {})
       lines = rv.split("\n")
