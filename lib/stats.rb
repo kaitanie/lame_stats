@@ -174,11 +174,19 @@ module Stats
     end
     
     def <<(value)
+      fill(value, 1.0)
+    end
+
+    def fill(value)
+      fill(value, 1.0)
+    end
+
+    def fill(value, weight)
       returning(bucket_index(value)) do |c|
-        @counts[c] += 1
+        @counts[c] += weight
       end
     end
-    
+
     def [](i)
       @counts[i]
     end
