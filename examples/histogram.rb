@@ -9,3 +9,6 @@ histogram = Stats::Histogram.new(10, 1.0, 0.0)
 end
 
 print histogram.to_s()
+
+weight_histo = Stats::Histogram.new(10, 1.0, 0.0)
+weight_histo.fill(0.5, 0.3)
